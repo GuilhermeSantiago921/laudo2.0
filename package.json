@@ -1,0 +1,10 @@
+{
+  "name": "laudocar-payment-backend",
+  "version": "1.0.0",
+  "description": "Backend para processar pagamentos da Laudo Car",
+  "main": "api/create-payment.js",
+  "private": true,
+  "dependencies": {
+    "mercadopago": "^2.0.10"
+  }
+}
