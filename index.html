@@ -18,14 +18,20 @@
     <link rel="icon" href="https://placehold.co/32x32/0284c7/FFFFFF?text=LC" type="image/png">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; /* bg-slate-50 */
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0284c7;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -38,13 +44,13 @@
         .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary { list-style: none; }
         .faq-item .faq-icon { transition: transform 0.3s ease; }
-        .faq-item[open] .faq-icon { transform: rotate(45deg); }
+        .faq-item[open] .faq-icon { transform: rotate(135deg); }
 
         /* Animações de Scroll */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .fade-in-section.is-visible {
             opacity: 1;
@@ -52,85 +58,94 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
     <!-- Cabeçalho -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-sky-600">Laudo<span class="font-light text-sky-800">Car</span></a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#o-que-e" class="text-gray-600 hover:text-sky-600 transition duration-300">O que é?</a>
-                <a href="#servicos" class="text-gray-600 hover:text-sky-600 transition duration-300">Consultas</a>
-                <a href="#faq" class="text-gray-600 hover:text-sky-600 transition duration-300">Dúvidas</a>
-                <a href="#consulta" class="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition duration-300 shadow">Consultar Placa</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#o-que-e" class="text-slate-600 hover:text-sky-600 transition duration-300">O que é?</a>
+                <a href="#servicos" class="text-slate-600 hover:text-sky-600 transition duration-300">Consultas</a>
+                <a href="#faq" class="text-slate-600 hover:text-sky-600 transition duration-300">Dúvidas</a>
+                <a href="#consulta" class="bg-sky-600 text-white px-5 py-2.5 rounded-lg hover:bg-sky-700 transition duration-300 shadow-md shadow-sky-200/50">Consultar Placa</a>
             </div>
-            <div class="md:hidden"><button class="text-gray-600 hover:text-sky-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
+            <div class="md:hidden"><button class="text-slate-600 hover:text-sky-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
         </nav>
     </header>
 
     <main>
         <!-- Seção Hero -->
         <section class="bg-white fade-in-section">
-            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">A segurança que você precisa <br class="hidden md:block"> para um <span class="text-sky-600">bom negócio</span>.</h1>
-                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Consulte o histórico completo de qualquer veículo antes de comprar. Tenha acesso a débitos, multas, restrições, sinistros, leilão e muito mais.</p>
-                <div class="mt-10"><a href="#consulta" class="bg-sky-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-sky-700 transition duration-300 shadow-lg transform hover:scale-105">Iniciar Consulta Agora</a></div>
+            <div class="relative container mx-auto px-6 py-20 md:py-32 text-center">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-100/50 to-transparent -z-10"></div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                    A segurança que você precisa <br class="hidden md:block"> para um <span class="text-sky-600">bom negócio</span>.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                    Consulte o histórico completo de qualquer veículo antes de comprar. Tenha acesso a débitos, multas, restrições, sinistros, leilão e muito mais.
+                </p>
+                <div class="mt-10">
+                    <a href="#consulta" class="bg-sky-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-sky-700 transition duration-300 shadow-xl shadow-sky-200/80 transform hover:scale-105">
+                        Iniciar Consulta Agora
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO DE CONSULTA (FORMULÁRIO NO TOPO) -->
-        <section id="consulta" class="bg-sky-700 text-white fade-in-section">
+        <!-- SEÇÃO DE CONSULTA (FORMULÁRIO NO TOPO) -->
+        <section id="consulta" class="bg-slate-800 text-white fade-in-section">
             <div class="container mx-auto px-6 py-20 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Inicie sua Consulta em 2 Passos</h2>
-                <p class="mt-4 text-sky-100 max-w-2xl mx-auto">1. Preencha seus dados e a placa. <br> 2. Escolha um dos planos abaixo para prosseguir.</p>
+                <p class="mt-4 text-slate-300 max-w-2xl mx-auto">1. Preencha seus dados e a placa. <br> 2. Escolha um dos planos abaixo para prosseguir.</p>
                 <div class="mt-8 max-w-xl mx-auto">
                     <form id="consultation-form" class="space-y-4">
                         <div>
-                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition" required>
+                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-lg bg-slate-700 text-white border border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition" required>
                         </div>
                         <div>
-                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition" required>
+                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-lg bg-slate-700 text-white border border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition" required>
                         </div>
                         <div>
-                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase text-center font-mono text-lg transition" required>
+                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-lg bg-slate-700 text-white border border-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 uppercase text-center font-mono text-lg transition" required>
                         </div>
                     </form>
-                    <p id="form-error" class="text-red-300 mt-4 text-sm h-4 font-semibold"></p>
+                    <p id="form-error" class="text-red-400 mt-4 text-sm h-4 font-semibold"></p>
                 </div>
             </div>
         </section>
         
         <!-- Seção de Serviços (Consultas) -->
-        <section id="servicos" class="py-20 bg-white fade-in-section">
+        <section id="servicos" class="py-20 bg-slate-50 fade-in-section">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Escolha o Plano Ideal</h2>
-                    <p class="mt-4 text-gray-600">Após preencher os dados acima, clique em "Selecionar" no plano desejado.</p>
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Escolha o Plano Ideal</h2>
+                    <p class="mt-4 text-slate-600">Após preencher os dados acima, clique em "Selecionar" no plano desejado.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     <!-- Card 1: Consulta Essencial -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col border">
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col border border-slate-200">
                         <div class="flex-grow">
-                            <h3 class="text-2xl font-semibold mb-3">Consulta Essencial</h3>
-                            <p class="text-gray-600 mb-6">Ideal para uma checagem rápida de pendências.</p>
-                            <ul class="space-y-3 text-gray-600 text-left">
+                            <h3 class="text-2xl font-semibold mb-3 text-slate-900">Consulta Essencial</h3>
+                            <p class="text-slate-600 mb-6">Ideal para uma checagem rápida de pendências.</p>
+                            <ul class="space-y-3 text-slate-600 text-left">
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Débitos de IPVA e Multas</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Restrições Administrativas</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Situação de Roubo ou Furto</li>
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <div class="text-3xl font-bold text-gray-800">R$ 29<span class="text-xl font-semibold">,90</span></div>
-                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Consulta Essencial" data-plan-price="29.90">Selecionar</button>
+                            <div class="text-3xl font-bold text-slate-800">R$ 29<span class="text-xl font-semibold">,90</span></div>
+                            <button class="select-plan-btn mt-4 w-full bg-slate-200 text-slate-800 font-semibold py-3 rounded-lg hover:bg-slate-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Consulta Essencial" data-plan-price="29.90">Selecionar</button>
                         </div>
                     </div>
                     <!-- Card 2: Consulta Completa -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 border-2 border-sky-600 relative flex flex-col">
-                        <span class="absolute top-0 right-4 -mt-3 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</span>
-                        <div class="flex-grow">
-                            <h3 class="text-2xl font-semibold mb-3">Consulta Completa</h3>
-                            <p class="text-gray-600 mb-6">A mais pedida! Segurança completa para sua compra.</p>
-                            <ul class="space-y-3 text-gray-600 text-left">
+                    <div class="service-card bg-white p-8 rounded-xl shadow-2xl shadow-sky-200/80 ring-2 ring-sky-500 relative flex flex-col">
+                        <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Mais Popular</span>
+                        <div class="flex-grow pt-4">
+                            <h3 class="text-2xl font-semibold mb-3 text-slate-900">Consulta Completa</h3>
+                            <p class="text-slate-600 mb-6">A mais pedida! Segurança completa para sua compra.</p>
+                            <ul class="space-y-3 text-slate-600 text-left">
                                 <li class="flex items-center font-semibold"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todos os itens da Essencial</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Histórico de Sinistro (Batidas)</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Passagem por Leilão</li>
@@ -144,11 +159,11 @@
                         </div>
                     </div>
                     <!-- Card 3: Laudo Cautelar -->
-                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col border">
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col border border-slate-200">
                         <div class="flex-grow">
-                            <h3 class="text-2xl font-semibold mb-3">Laudo Cautelar</h3>
-                            <p class="text-gray-600 mb-6">Análise documental e estrutural completa.</p>
-                            <ul class="space-y-3 text-gray-600 text-left">
+                            <h3 class="text-2xl font-semibold mb-3 text-slate-900">Laudo Cautelar</h3>
+                            <p class="text-slate-600 mb-6">Análise documental e estrutural completa.</p>
+                            <ul class="space-y-3 text-slate-600 text-left">
                                 <li class="flex items-center font-semibold"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Todos os itens da Completa</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Análise de Chassi e Motor</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Verificação de Originalidade</li>
@@ -156,8 +171,8 @@
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <div class="text-3xl font-bold text-gray-800">R$ 89<span class="text-xl font-semibold">,90</span></div>
-                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Laudo Cautelar" data-plan-price="89.90">Selecionar</button>
+                            <div class="text-3xl font-bold text-slate-800">R$ 89<span class="text-xl font-semibold">,90</span></div>
+                            <button class="select-plan-btn mt-4 w-full bg-slate-200 text-slate-800 font-semibold py-3 rounded-lg hover:bg-slate-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Laudo Cautelar" data-plan-price="89.90">Selecionar</button>
                         </div>
                     </div>
                 </div>
@@ -165,14 +180,14 @@
         </section>
 
         <!-- Seção O que é -->
-        <section id="o-que-e" class="py-20 bg-gray-100 fade-in-section"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">O que é uma Consulta Veicular?</h2><p class="mt-4 text-gray-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-xl font-semibold mb-2">Evite Fraudes e Golpes</h3><p class="text-gray-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg><h3 class="text-xl font-semibold mb-2">Fuja de Dívidas Escondidas</h3><p class="text-gray-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><h3 class="text-xl font-semibold mb-2">Negocie com Mais Poder</h3><p class="text-gray-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p></div></div></div></section>
+        <section id="o-que-e" class="py-20 bg-white fade-in-section"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-slate-900">O que é uma Consulta Veicular?</h2><p class="mt-4 text-slate-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"><div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200"><div class="bg-sky-100 text-sky-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div><h3 class="text-xl font-semibold mb-2 text-slate-900">Evite Fraudes e Golpes</h3><p class="text-slate-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p></div><div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200"><div class="bg-sky-100 text-sky-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><h3 class="text-xl font-semibold mb-2 text-slate-900">Fuja de Dívidas Escondidas</h3><p class="text-slate-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p></div><div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200"><div class="bg-sky-100 text-sky-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div><h3 class="text-xl font-semibold mb-2 text-slate-900">Negocie com Mais Poder</h3><p class="text-slate-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p></div></div></div></section>
 
         <!-- Seção FAQ -->
-        <section id="faq" class="py-20 bg-white fade-in-section"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">Perguntas Frequentes</h2><p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre o processo.</p></div><div class="space-y-4"><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">A consulta é imediata? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">É seguro pagar pelo site? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">Quais placas posso consultar? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">E se a consulta não encontrar nada? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p></details></div></div></section>
+        <section id="faq" class="py-20 bg-slate-50 fade-in-section"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-slate-900">Perguntas Frequentes</h2><p class="mt-4 text-slate-600">Tirando suas principais dúvidas sobre o processo.</p></div><div class="space-y-4"><details class="faq-item bg-white p-6 rounded-lg cursor-pointer transition shadow-sm border border-slate-200"><summary class="font-semibold text-lg flex justify-between items-center text-slate-900">A consulta é imediata? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-4 text-slate-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p></details><details class="faq-item bg-white p-6 rounded-lg cursor-pointer transition shadow-sm border border-slate-200"><summary class="font-semibold text-lg flex justify-between items-center text-slate-900">É seguro pagar pelo site? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-4 text-slate-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p></details><details class="faq-item bg-white p-6 rounded-lg cursor-pointer transition shadow-sm border border-slate-200"><summary class="font-semibold text-lg flex justify-between items-center text-slate-900">Quais placas posso consultar? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-4 text-slate-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p></details><details class="faq-item bg-white p-6 rounded-lg cursor-pointer transition shadow-sm border border-slate-200"><summary class="font-semibold text-lg flex justify-between items-center text-slate-900">E se a consulta não encontrar nada? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-4 text-slate-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p></details></div></div></section>
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white"><div class="container mx-auto px-6 py-8"><div class="flex flex-col md:flex-row justify-between items-center"><div class="text-center md:text-left mb-4 md:mb-0"><a href="#" class="text-xl font-bold text-white">Laudo<span class="font-light text-sky-400">Car</span></a><p class="text-sm text-gray-400 mt-1">Sua fonte de confiança em consultas veiculares.</p></div><div class="flex space-x-6"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Termos de Uso</a><a href="#" class="text-gray-400 hover:text-white transition duration-300">Política de Privacidade</a></div></div><div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Laudo Car. Todos os direitos reservados.</p></div></div></footer>
+    <footer class="bg-slate-800 text-white"><div class="container mx-auto px-6 py-12"><div class="flex flex-col md:flex-row justify-between items-center"><div class="text-center md:text-left mb-6 md:mb-0"><a href="#" class="text-xl font-bold text-white">Laudo<span class="font-light text-sky-400">Car</span></a><p class="text-sm text-slate-400 mt-1">Sua fonte de confiança em consultas veiculares.</p></div><div class="flex space-x-6"><a href="#" class="text-slate-400 hover:text-white transition duration-300">Termos de Uso</a><a href="#" class="text-slate-400 hover:text-white transition duration-300">Política de Privacidade</a></div></div><div class="mt-10 border-t border-slate-700 pt-8 text-center text-slate-500 text-sm"><p>&copy; 2024 Laudo Car. Todos os direitos reservados.</p></div></div></footer>
 
     <script>
         const nameInput = document.getElementById('name-input');
