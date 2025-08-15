@@ -23,10 +23,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
-        .selected-plan {
-            box-shadow: 0 0 0 3px #0284c7;
-            transform: translateY(-5px);
-        }
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #0284c7;
@@ -53,7 +49,7 @@
                 <a href="#o-que-e" class="text-gray-600 hover:text-sky-600 transition duration-300">O que é?</a>
                 <a href="#servicos" class="text-gray-600 hover:text-sky-600 transition duration-300">Consultas</a>
                 <a href="#faq" class="text-gray-600 hover:text-sky-600 transition duration-300">Dúvidas</a>
-                <a href="#contato" class="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition duration-300 shadow">Consultar Placa</a>
+                <a href="#consulta" class="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition duration-300 shadow">Consultar Placa</a>
             </div>
             <div class="md:hidden"><button class="text-gray-600 hover:text-sky-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
         </nav>
@@ -65,50 +61,42 @@
             <div class="container mx-auto px-6 py-20 md:py-32 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">A segurança que você precisa <br class="hidden md:block"> para um <span class="text-sky-600">bom negócio</span>.</h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Consulte o histórico completo de qualquer veículo antes de comprar. Tenha acesso a débitos, multas, restrições, sinistros, leilão e muito mais.</p>
-                <div class="mt-10"><a href="#servicos" class="bg-sky-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-sky-700 transition duration-300 shadow-lg transform hover:scale-105">Ver Planos e Preços</a></div>
+                <div class="mt-10"><a href="#consulta" class="bg-sky-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-sky-700 transition duration-300 shadow-lg transform hover:scale-105">Iniciar Consulta Agora</a></div>
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: O que é uma Consulta Veicular? -->
-        <section id="o-que-e" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">O que é uma Consulta Veicular?</h2>
-                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <!-- Card 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Evite Fraudes e Golpes</h3>
-                        <p class="text-gray-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Fuja de Dívidas Escondidas</h3>
-                        <p class="text-gray-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        <h3 class="text-xl font-semibold mb-2">Negocie com Mais Poder</h3>
-                        <p class="text-gray-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p>
-                    </div>
+        <!-- NOVA SEÇÃO DE CONSULTA (FORMULÁRIO NO TOPO) -->
+        <section id="consulta" class="bg-sky-700 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Inicie sua Consulta em 2 Passos</h2>
+                <p class="mt-4 text-sky-100 max-w-2xl mx-auto">1. Preencha seus dados e a placa. <br> 2. Escolha um dos planos abaixo para prosseguir.</p>
+                <div class="mt-8 max-w-xl mx-auto">
+                    <form id="consultation-form" class="space-y-4">
+                        <div>
+                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
+                        </div>
+                        <div>
+                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
+                        </div>
+                        <div>
+                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase text-center font-mono text-lg" required>
+                        </div>
+                    </form>
+                    <p id="form-error" class="text-red-300 mt-4 text-sm h-4 font-semibold"></p>
                 </div>
             </div>
         </section>
-
+        
         <!-- Seção de Serviços (Consultas) -->
         <section id="servicos" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nossas Consultas</h2>
-                    <p class="mt-4 text-gray-600">Escolha o plano ideal para sua necessidade e prossiga para a consulta.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Escolha o Plano Ideal</h2>
+                    <p class="mt-4 text-gray-600">Após preencher os dados acima, clique em "Selecionar" no plano desejado.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     <!-- Card 1: Consulta Essencial -->
-                    <div id="plan-essential" class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col cursor-pointer border">
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col border">
                         <div class="flex-grow">
                             <h3 class="text-2xl font-semibold mb-3">Consulta Essencial</h3>
                             <p class="text-gray-600 mb-6">Ideal para uma checagem rápida de pendências.</p>
@@ -120,11 +108,11 @@
                         </div>
                         <div class="mt-8">
                             <div class="text-3xl font-bold text-gray-800">R$ 29<span class="text-xl font-semibold">,90</span></div>
-                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300" data-plan-name="Consulta Essencial" data-plan-price="29.90">Selecionar</button>
+                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Consulta Essencial" data-plan-price="29.90">Selecionar</button>
                         </div>
                     </div>
                     <!-- Card 2: Consulta Completa -->
-                    <div id="plan-complete" class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 border-2 border-sky-600 relative flex flex-col cursor-pointer">
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 border-2 border-sky-600 relative flex flex-col">
                         <span class="absolute top-0 right-4 -mt-3 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</span>
                         <div class="flex-grow">
                             <h3 class="text-2xl font-semibold mb-3">Consulta Completa</h3>
@@ -139,11 +127,11 @@
                         </div>
                         <div class="mt-8">
                             <div class="text-3xl font-bold text-sky-600">R$ 49<span class="text-xl font-semibold">,90</span></div>
-                            <button class="select-plan-btn mt-4 w-full bg-sky-600 text-white font-bold py-3 rounded-lg hover:bg-sky-700 transition duration-300" data-plan-name="Consulta Completa" data-plan-price="49.90">Selecionar</button>
+                            <button class="select-plan-btn mt-4 w-full bg-sky-600 text-white font-bold py-3 rounded-lg hover:bg-sky-700 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Consulta Completa" data-plan-price="49.90">Selecionar</button>
                         </div>
                     </div>
                     <!-- Card 3: Laudo Cautelar -->
-                    <div id="plan-premium" class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col cursor-pointer border">
+                    <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 flex flex-col border">
                         <div class="flex-grow">
                             <h3 class="text-2xl font-semibold mb-3">Laudo Cautelar</h3>
                             <p class="text-gray-600 mb-6">Análise documental e estrutural completa.</p>
@@ -156,162 +144,85 @@
                         </div>
                         <div class="mt-8">
                             <div class="text-3xl font-bold text-gray-800">R$ 89<span class="text-xl font-semibold">,90</span></div>
-                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300" data-plan-name="Laudo Cautelar" data-plan-price="89.90">Selecionar</button>
+                            <button class="select-plan-btn mt-4 w-full bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition duration-300 h-[48px] flex items-center justify-center" data-plan-name="Laudo Cautelar" data-plan-price="89.90">Selecionar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Seção Como Funciona -->
-        <section id="como-funciona" class="py-20 bg-gray-100"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">Simples, Rápido e 100% Online</h2><p class="mt-4 text-gray-600">Em 3 passos você tem o laudo em mãos.</p></div><div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16"><div class="text-center max-w-xs"><div class="bg-sky-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">1</div><h3 class="text-xl font-semibold mb-2">Escolha o Plano e Informe os Dados</h3><p class="text-gray-600">Selecione a consulta, digite seu nome, e-mail e a placa do veículo.</p></div><div class="text-center max-w-xs"><div class="bg-sky-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">2</div><h3 class="text-xl font-semibold mb-2">Faça o Pagamento Seguro</h3><p class="text-gray-600">Pague de forma segura com cartão de crédito ou Pix em nosso ambiente protegido.</p></div><div class="text-center max-w-xs"><div class="bg-sky-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">3</div><h3 class="text-xl font-semibold mb-2">Receba o Laudo por E-mail</h3><p class="text-gray-600">Assim que o pagamento for aprovado, a consulta é feita e o laudo completo é enviado para o seu e-mail.</p></div></div></div></section>
 
-        <!-- NOVA SEÇÃO: FAQ -->
-        <section id="faq" class="py-20 bg-white">
-            <div class="container mx-auto px-6 max-w-3xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Perguntas Frequentes</h2>
-                    <p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre o processo.</p>
-                </div>
-                <div class="space-y-4">
-                    <details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer">
-                        <summary class="font-semibold text-lg flex justify-between items-center">A consulta é imediata? <span class="text-sky-600">+</span></summary>
-                        <p class="mt-2 text-gray-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p>
-                    </details>
-                    <details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer">
-                        <summary class="font-semibold text-lg flex justify-between items-center">É seguro pagar pelo site? <span class="text-sky-600">+</span></summary>
-                        <p class="mt-2 text-gray-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p>
-                    </details>
-                    <details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer">
-                        <summary class="font-semibold text-lg flex justify-between items-center">Quais placas posso consultar? <span class="text-sky-600">+</span></summary>
-                        <p class="mt-2 text-gray-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p>
-                    </details>
-                    <details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer">
-                        <summary class="font-semibold text-lg flex justify-between items-center">E se a consulta não encontrar nada? <span class="text-sky-600">+</span></summary>
-                        <p class="mt-2 text-gray-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
+        <!-- Seção O que é -->
+        <section id="o-que-e" class="py-20 bg-gray-100"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">O que é uma Consulta Veicular?</h2><p class="mt-4 text-gray-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-xl font-semibold mb-2">Evite Fraudes e Golpes</h3><p class="text-gray-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg><h3 class="text-xl font-semibold mb-2">Fuja de Dívidas Escondidas</h3><p class="text-gray-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><h3 class="text-xl font-semibold mb-2">Negocie com Mais Poder</h3><p class="text-gray-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p></div></div></div></section>
 
-        <!-- Seção de Contato / CTA Final -->
-        <section id="contato" class="bg-sky-700 text-white">
-            <div class="container mx-auto px-6 py-20 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold">Pronto para fazer um negócio seguro?</h2>
-                <p id="contact-instruction" class="mt-4 text-sky-100 max-w-2xl mx-auto">Selecione um plano acima e depois preencha seus dados para continuar.</p>
-                <div class="mt-8 max-w-xl mx-auto">
-                    <form id="payment-form" class="space-y-4">
-                        <div>
-                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
-                        </div>
-                        <div>
-                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase text-center font-mono text-lg" required>
-                            <button id="submit-btn" type="submit" class="bg-gray-900 text-white font-bold px-8 py-3 rounded-md hover:bg-black transition duration-300 whitespace-nowrap flex items-center justify-center w-full sm:w-auto">
-                                <span id="submit-btn-text">Consultar e Pagar</span>
-                                <div id="loader" class="loader hidden ml-3"></div>
-                            </button>
-                        </div>
-                    </form>
-                    <p id="form-error" class="text-red-300 mt-2 text-sm h-4"></p>
-                </div>
-            </div>
-        </section>
+        <!-- Seção FAQ -->
+        <section id="faq" class="py-20 bg-white"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">Perguntas Frequentes</h2><p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre o processo.</p></div><div class="space-y-4"><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">A consulta é imediata? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">É seguro pagar pelo site? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">Quais placas posso consultar? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">E se a consulta não encontrar nada? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p></details></div></div></section>
     </main>
 
     <!-- Rodapé -->
     <footer class="bg-gray-800 text-white"><div class="container mx-auto px-6 py-8"><div class="flex flex-col md:flex-row justify-between items-center"><div class="text-center md:text-left mb-4 md:mb-0"><a href="#" class="text-xl font-bold text-white">Laudo<span class="font-light text-sky-400">Car</span></a><p class="text-sm text-gray-400 mt-1">Sua fonte de confiança em consultas veiculares.</p></div><div class="flex space-x-6"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Termos de Uso</a><a href="#" class="text-gray-400 hover:text-white transition duration-300">Política de Privacidade</a></div></div><div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2024 Laudo Car. Todos os direitos reservados.</p></div></div></footer>
 
     <script>
-        let selectedPlan = null;
-        const planButtons = document.querySelectorAll('.select-plan-btn');
-        const serviceCards = document.querySelectorAll('.service-card');
-        const form = document.getElementById('payment-form');
         const nameInput = document.getElementById('name-input');
         const emailInput = document.getElementById('email-input');
         const plateInput = document.getElementById('plate-input');
-        const submitBtn = document.getElementById('submit-btn');
-        const submitBtnText = document.getElementById('submit-btn-text');
-        const loader = document.getElementById('loader');
         const formError = document.getElementById('form-error');
-        const contactInstruction = document.getElementById('contact-instruction');
-
-        serviceCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const button = card.querySelector('.select-plan-btn');
-                if (button) button.click();
-            });
-        });
+        const planButtons = document.querySelectorAll('.select-plan-btn');
 
         planButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
+            button.addEventListener('click', async (event) => {
                 event.preventDefault();
-                event.stopPropagation();
-                serviceCards.forEach(card => card.classList.remove('selected-plan'));
-                const selectedCard = button.closest('.service-card');
-                selectedCard.classList.add('selected-plan');
-                selectedPlan = {
+                formError.textContent = ''; // Limpa erros anteriores
+
+                const customerName = nameInput.value.trim();
+                const customerEmail = emailInput.value.trim();
+                const plate = plateInput.value.trim();
+
+                // Valida se os campos do formulário foram preenchidos
+                if (!customerName || !customerEmail || !plate) {
+                    formError.textContent = 'Por favor, preencha todos os campos acima (nome, e-mail e placa).';
+                    document.getElementById('consulta').scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+
+                // Pega os dados do plano do botão clicado
+                const selectedPlan = {
                     name: button.dataset.planName,
                     price: parseFloat(button.dataset.planPrice)
                 };
-                contactInstruction.textContent = `Plano selecionado: "${selectedPlan.name}". Agora preencha seus dados.`;
-                formError.textContent = '';
-                document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
-                nameInput.focus();
-            });
-        });
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            formError.textContent = '';
+                // Mostra o estado de carregamento no botão
+                const originalButtonContent = button.innerHTML;
+                button.innerHTML = '<div class="loader mx-auto"></div>';
+                button.disabled = true;
+                planButtons.forEach(btn => btn.disabled = true); // Desabilita todos os botões
 
-            if (!selectedPlan) {
-                formError.textContent = 'Por favor, selecione um plano de consulta acima.';
-                document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' });
-                return;
-            }
-            
-            const customerName = nameInput.value.trim();
-            const customerEmail = emailInput.value.trim();
-            const plate = plateInput.value.trim();
+                try {
+                    const apiUrl = `${window.location.origin}/api/create-payment`;
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            planName: selectedPlan.name,
+                            planPrice: selectedPlan.price,
+                            plate: plate,
+                            customerName: customerName,
+                            customerEmail: customerEmail
+                        }),
+                    });
 
-            if (!customerName || !customerEmail || !plate) {
-                formError.textContent = 'Por favor, preencha todos os campos.';
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtnText.textContent = 'Processando...';
-            loader.classList.remove('hidden');
-
-            try {
-                const apiUrl = `${window.location.origin}/api/create-payment`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        planName: selectedPlan.name,
-                        planPrice: selectedPlan.price,
-                        plate: plate,
-                        customerName: customerName,
-                        customerEmail: customerEmail
-                    }),
-                });
-
-                const data = await response.json();
-                if (response.ok) {
-                    window.location.href = data.paymentUrl;
-                } else {
-                    throw new Error(data.error || 'Ocorreu um erro ao criar o pagamento.');
+                    const data = await response.json();
+                    if (response.ok) {
+                        window.location.href = data.paymentUrl;
+                    } else {
+                        throw new Error(data.error || 'Ocorreu um erro ao criar o pagamento.');
+                    }
+                } catch (error) {
+                    formError.textContent = error.message;
+                    // Restaura o botão clicado e reabilita todos
+                    button.innerHTML = originalButtonContent;
+                    planButtons.forEach(btn => btn.disabled = false);
                 }
-            } catch (error) {
-                formError.textContent = error.message;
-                submitBtn.disabled = false;
-                submitBtnText.textContent = 'Consultar e Pagar';
-                loader.classList.add('hidden');
-            }
+            });
         });
     </script>
 </body>
