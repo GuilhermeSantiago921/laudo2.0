@@ -37,6 +37,19 @@
         }
         .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary { list-style: none; }
+        .faq-item .faq-icon { transition: transform 0.3s ease; }
+        .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+        /* Animações de Scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -57,7 +70,7 @@
 
     <main>
         <!-- Seção Hero -->
-        <section class="bg-white">
+        <section class="bg-white fade-in-section">
             <div class="container mx-auto px-6 py-20 md:py-32 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">A segurança que você precisa <br class="hidden md:block"> para um <span class="text-sky-600">bom negócio</span>.</h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Consulte o histórico completo de qualquer veículo antes de comprar. Tenha acesso a débitos, multas, restrições, sinistros, leilão e muito mais.</p>
@@ -66,20 +79,20 @@
         </section>
 
         <!-- NOVA SEÇÃO DE CONSULTA (FORMULÁRIO NO TOPO) -->
-        <section id="consulta" class="bg-sky-700 text-white">
+        <section id="consulta" class="bg-sky-700 text-white fade-in-section">
             <div class="container mx-auto px-6 py-20 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Inicie sua Consulta em 2 Passos</h2>
                 <p class="mt-4 text-sky-100 max-w-2xl mx-auto">1. Preencha seus dados e a placa. <br> 2. Escolha um dos planos abaixo para prosseguir.</p>
                 <div class="mt-8 max-w-xl mx-auto">
                     <form id="consultation-form" class="space-y-4">
                         <div>
-                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
+                            <input id="name-input" type="text" placeholder="Seu Nome Completo" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition" required>
                         </div>
                         <div>
-                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" required>
+                            <input id="email-input" type="email" placeholder="Seu melhor E-mail" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition" required>
                         </div>
                         <div>
-                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase text-center font-mono text-lg" required>
+                            <input id="plate-input" type="text" placeholder="Digite a placa aqui" class="w-full px-5 py-3 rounded-md text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase text-center font-mono text-lg transition" required>
                         </div>
                     </form>
                     <p id="form-error" class="text-red-300 mt-4 text-sm h-4 font-semibold"></p>
@@ -88,7 +101,7 @@
         </section>
         
         <!-- Seção de Serviços (Consultas) -->
-        <section id="servicos" class="py-20 bg-white">
+        <section id="servicos" class="py-20 bg-white fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Escolha o Plano Ideal</h2>
@@ -152,10 +165,10 @@
         </section>
 
         <!-- Seção O que é -->
-        <section id="o-que-e" class="py-20 bg-gray-100"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">O que é uma Consulta Veicular?</h2><p class="mt-4 text-gray-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-xl font-semibold mb-2">Evite Fraudes e Golpes</h3><p class="text-gray-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg><h3 class="text-xl font-semibold mb-2">Fuja de Dívidas Escondidas</h3><p class="text-gray-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><h3 class="text-xl font-semibold mb-2">Negocie com Mais Poder</h3><p class="text-gray-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p></div></div></div></section>
+        <section id="o-que-e" class="py-20 bg-gray-100 fade-in-section"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">O que é uma Consulta Veicular?</h2><p class="mt-4 text-gray-600 max-w-3xl mx-auto">É a sua principal ferramenta de segurança na hora de comprar um carro usado. Pense nela como um "raio-x" completo do veículo.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-xl font-semibold mb-2">Evite Fraudes e Golpes</h3><p class="text-gray-600">Descubra se o veículo tem histórico de roubo, furto, sinistro (batidas graves) ou se é de leilão, informações que vendedores mal-intencionados podem omitir.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg><h3 class="text-xl font-semibold mb-2">Fuja de Dívidas Escondidas</h3><p class="text-gray-600">Verifique a existência de multas, IPVA atrasado ou outras restrições administrativas que podem impedir a transferência do veículo para o seu nome.</p></div><div class="bg-white p-6 rounded-lg shadow"><svg class="w-12 h-12 mx-auto text-sky-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><h3 class="text-xl font-semibold mb-2">Negocie com Mais Poder</h3><p class="text-gray-600">Com o laudo completo em mãos, você tem informações valiosas para negociar o preço do veículo de forma justa ou até mesmo desistir de um mau negócio.</p></div></div></div></section>
 
         <!-- Seção FAQ -->
-        <section id="faq" class="py-20 bg-white"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">Perguntas Frequentes</h2><p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre o processo.</p></div><div class="space-y-4"><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">A consulta é imediata? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">É seguro pagar pelo site? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">Quais placas posso consultar? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer"><summary class="font-semibold text-lg flex justify-between items-center">E se a consulta não encontrar nada? <span class="text-sky-600">+</span></summary><p class="mt-2 text-gray-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p></details></div></div></section>
+        <section id="faq" class="py-20 bg-white fade-in-section"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800">Perguntas Frequentes</h2><p class="mt-4 text-gray-600">Tirando suas principais dúvidas sobre o processo.</p></div><div class="space-y-4"><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">A consulta é imediata? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Sim! Assim que o sistema de pagamento aprova sua transação (o que geralmente leva segundos), nossa API realiza a consulta e envia o laudo para o seu e-mail em poucos minutos.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">É seguro pagar pelo site? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Totalmente seguro. Todo o processo de pagamento é gerenciado pelo Mercado Pago, uma das maiores e mais seguras plataformas de pagamento do Brasil. Nós não armazenamos nenhum dado do seu cartão.</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">Quais placas posso consultar? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Você pode consultar qualquer placa de veículo registrada no Brasil, seja no formato antigo (ABC-1234) ou no novo padrão Mercosul (ABC1D23).</p></details><details class="faq-item bg-gray-100 p-4 rounded-lg cursor-pointer transition"><summary class="font-semibold text-lg flex justify-between items-center">E se a consulta não encontrar nada? <span class="faq-icon text-sky-600 font-bold text-2xl">+</span></summary><p class="mt-2 text-gray-600">Se a consulta retornar sem apontamentos (sem débitos, sem leilão, etc.), isso é uma ótima notícia! Significa que o veículo tem um bom histórico. O laudo detalhará todos os pontos verificados, confirmando a regularidade do veículo.</p></details></div></div></section>
     </main>
 
     <!-- Rodapé -->
@@ -222,6 +235,23 @@
                     button.innerHTML = originalButtonContent;
                     planButtons.forEach(btn => btn.disabled = false);
                 }
+            });
+        });
+
+        // Script para animações e dinamismo
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animação de scroll
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
